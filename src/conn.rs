@@ -5,7 +5,6 @@ use tracing::{debug, trace};
 use uuid::Uuid;
 
 use crate::close::Close;
-use crate::config::Settings;
 use crate::conn::Nip42AuthState::{AuthPubkey, Challenge, NoAuth};
 use crate::error::Error;
 use crate::error::Result;
@@ -38,20 +37,18 @@ pub struct ClientConn {
     max_subs: usize,
     /// NIP-42 AUTH
     auth: Nip42AuthState,
-
-    settings: Settings,
 }
 
 impl Default for ClientConn {
     fn default() -> Self {
-        Self::new_with_default_settings("unknown".to_owned())
+        Self::new("unknown".to_owned())
     }
 }
 
 impl ClientConn {
     /// Create a new, empty connection state.
     #[must_use]
-    pub fn new(client_ip_addr: String, settings: Settings) -> Self {
+    pub fn new(client_ip_addr: String) -> Self {
         let client_id = Uuid::new_v4();
         ClientConn {
             client_ip_addr,
@@ -59,17 +56,7 @@ impl ClientConn {
             subscriptions: HashMap::new(),
             max_subs: 32,
             auth: NoAuth,
-            settings: settings,
         }
-    }
-
-    /// Create a new, empty connection state.
-    #[must_use]
-    pub fn new_with_default_settings(client_ip_addr: String) -> Self {
-        ClientConn::new(
-            client_ip_addr,
-            Settings::new(&None).expect("couldn't create Settings"),
-        )
     }
 
     #[must_use]

@@ -16,7 +16,7 @@ mod tests {
 
     #[test]
     fn test_generate_auth_challenge() {
-        let mut client_conn = ClientConn::new_with_default_settings("127.0.0.1".into());
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -45,7 +45,7 @@ mod tests {
 
         let mut settings = Settings::new(&None).unwrap();
         settings.authorization.pubkey_whitelist = Some(vec![pubkey.to_hex()]);
-        let mut client_conn = ClientConn::new("127.0.0.1".into(), settings);
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -67,7 +67,7 @@ mod tests {
 
     #[test]
     fn test_fail_to_authenticate_in_invalid_state() {
-        let mut client_conn = ClientConn::new_with_default_settings("127.0.0.1".into());
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -85,7 +85,7 @@ mod tests {
 
         let mut settings = Settings::new(&None).unwrap();
         settings.authorization.pubkey_whitelist = Some(vec![pubkey.to_hex()]);
-        let mut client_conn = ClientConn::new("127.0.0.1".into(), settings);
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -116,7 +116,7 @@ mod tests {
 
     #[test]
     fn test_fail_to_authenticate_with_invalid_event() {
-        let mut client_conn = ClientConn::new_with_default_settings("127.0.0.1".into());
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -137,7 +137,7 @@ mod tests {
 
     #[test]
     fn test_fail_to_authenticate_with_invalid_event_kind() {
-        let mut client_conn = ClientConn::new_with_default_settings("127.0.0.1".into());
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -157,7 +157,7 @@ mod tests {
 
     #[test]
     fn test_fail_to_authenticate_with_expired_timestamp() {
-        let mut client_conn = ClientConn::new_with_default_settings("127.0.0.1".into());
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -177,7 +177,7 @@ mod tests {
 
     #[test]
     fn test_fail_to_authenticate_with_future_timestamp() {
-        let mut client_conn = ClientConn::new_with_default_settings("127.0.0.1".into());
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -197,7 +197,7 @@ mod tests {
 
     #[test]
     fn test_fail_to_authenticate_without_tags() {
-        let mut client_conn = ClientConn::new_with_default_settings("127.0.0.1".into());
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -216,7 +216,7 @@ mod tests {
 
     #[test]
     fn test_fail_to_authenticate_without_challenge() {
-        let mut client_conn = ClientConn::new_with_default_settings("127.0.0.1".into());
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -235,7 +235,7 @@ mod tests {
 
     #[test]
     fn test_fail_to_authenticate_without_relay() {
-        let mut client_conn = ClientConn::new_with_default_settings("127.0.0.1".into());
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -255,7 +255,7 @@ mod tests {
 
     #[test]
     fn test_fail_to_authenticate_with_invalid_challenge() {
-        let mut client_conn = ClientConn::new_with_default_settings("127.0.0.1".into());
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);
@@ -274,7 +274,7 @@ mod tests {
 
     #[test]
     fn test_fail_to_authenticate_with_invalid_relay() {
-        let mut client_conn = ClientConn::new_with_default_settings("127.0.0.1".into());
+        let mut client_conn = ClientConn::new("127.0.0.1".into());
 
         assert_eq!(client_conn.auth_challenge(), None);
         assert_eq!(client_conn.auth_pubkey(), None);

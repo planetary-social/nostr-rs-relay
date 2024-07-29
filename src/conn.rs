@@ -211,7 +211,10 @@ impl ClientConn {
                 match (relay.and_then(host_str), host_str(relay_url)) {
                     (Some(received_relay), Some(our_relay)) => {
                         if received_relay != our_relay {
-                            debug!("Invalid auth relay. Should be: {}", our_relay);
+                            debug!(
+                                "Invalid auth relay. Should be {} but was {}",
+                                our_relay, received_relay
+                            );
                             return Err(Error::AuthFailure);
                         }
                     }

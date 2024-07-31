@@ -173,6 +173,8 @@ pubkey_whitelist = [
 ]
 
 pubkey_whitelist_readers = [
+  "d04ce873fb354a08756e9b8bf5e214a644e9ecbf0999c5f8c9de13504e16b5d5",
+
   # July 31 am
   "ae8ef5576370b5cb91d262cf0d31d5ce9f5ca26c3ad2d56d5c58f6023633e453",
   "1b7f2acf86114fb4f600a4974435e55246cc48024d4ee9036efff94e989fad2e",

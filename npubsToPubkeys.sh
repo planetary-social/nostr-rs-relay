@@ -8,10 +8,4 @@ fi
 
 input_file="$1"
 
-# Read the input file line by line
-while IFS= read -r npub; do
-  # Run the command for each npub and output the result
-  result=$(nostrkeytool --npub2pubkey "$npub")
-  echo "$result"
-done < "$input_file"
-
+cat $input_file | xargs nak decode | jq .pubkey | sed 's/$/,/' | sed 's/^/  /' | pbcopy

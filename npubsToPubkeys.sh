@@ -14,7 +14,8 @@ current_day=$(date +%-d)
 time_period=$(date +%p | tr '[:upper:]' '[:lower:]')
 
 # Construct the comment line
-comment_line="  # $current_month $current_day $time_period"
+date_msg="$current_month $current_day $time_period"
+comment_line="  # $date_msg"
 
 # Read the file and transform it
 cat "$input_file" | while IFS= read -r line; do
@@ -31,8 +32,8 @@ done | pbcopy
 vim config.toml -c '/pubkey_whitelist_readers' -c "normal o" -c "normal k" -c "normal o$comment_line" -c 'normal "+p' -c 'wq'
 
 echo config.toml was edited with new pubkeys, verify and commit \n
-git diff
 
-
-
+git add config.toml
+git commit -m "$date_msg key updates"
+git show
 

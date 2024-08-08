@@ -173,6 +173,10 @@ pubkey_whitelist = [
 ]
 
 pubkey_whitelist_readers = [
+  # August 8 am
+  "7dd60828c07a7783fd029b634cbe25588877af14ab6e9573780d7a8521d220bf", # npub10htqs2xq0fmc8lgznd35e039tzy80tc54dhf2umcp4ag2gwjyzlsn8dc4c
+  "392df0d9dcc2aa905c0458a6f3670e92f29461b8dc19acdd25886b74aeaf857c", # npub18yklpkwuc24fqhqytzn0xecwjtefgcdcmsv6ehf93p4hft40s47qqjhvus
+
   # August 7 pm
   "044a03044a9a96ef1c629651d5f4d3a23a22a4589ccae0df0a02b7deaf0de31b", # npub1q39qxpz2n2tw78rzjegataxn5gaz9fzcnn9wphc2q2maatcduvds542zhv
   "4b0bcab460adda31fad5a326fb0c04f6ec821fb24be85dbdc03c04cc0e12fc07", # npub1fv9u4drq4hdrr7k45vn0krqy7mkgy8ajf059m0wq8szvcrsjlsrs8tdz3p

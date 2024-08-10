@@ -173,6 +173,15 @@ pubkey_whitelist = [
 ]
 
 pubkey_whitelist_readers = [
+  # August 10 am
+  "a1b4fa2376939b6b4321a0f8d2dce64e1dc5d50ba895d7c0b86edb899eaf3113", # npub15x605gmkjwdkksep5rud9h8xfcwut4gt4z2a0s9cdmdcn840xyfsqvs5wz
+  "a81e7bb41ec746295f7d629542fd777697d60b520aa7eb0acdfa06ffd41e6f17", # npub14q08hdq7carzjhmav2259lthw6tavz6jp2n7kzkdlgr0l4q7dutswvgspq
+  "d44aa443b91264d70adb8e3f476db71230262e3c3fe4ae37bb48a2e8b0cbebb7", # npub16392gsaezfjdwzkm3cl5wmdhzgczvt3u8lj2udamfz3w3vxtawms9s6vnj
+  "edb1aabca824e18230afc9b19dcf904f30bfbfb3115c8a8801f39d0e758bc8cc", # npub1akc6409gynscyv90excemnusfuctl0anz9wg4zqp7wwsuavterxqsgd274
+  "432f5e0803db31127dbb98a7477c26b6ff4f28daa9a560dd10ec76bf7633a9d2", # npub1gvh4uzqrmvc3yldmnzn5wlpxkml572x64xjkphgsa3mt7a3n48fqmdcem4
+  "ae8ef5576370b5cb91d262cf0d31d5ce9f5ca26c3ad2d56d5c58f6023633e453", # npub1468024mrwz6uhywjvt8s6vw4e604egnv8tfd2m2utrmqyd3nu3fsutvgjn
+  "89e33e7e8967b3a11cca1d7d98dd2c1f435be513b2ed2ade9dff29c975dce917", # npub1383nul5fv7e6z8x2r47e3hfvrap4hegnktkj4h5alu5ujawuayts0l9856
+
   # August 9 pm
   "0036e831a75c138ed38eb47977f4010f39bc4e00ba5209f795a569a0e9733577", # npub1qqmwsvd8tsfca5uwk3uh0aqppuumcnsqhffqnau45456p6tnx4ms5cx980
   "0fe62931316581fc9ee0773a488e7e3f82f8581106a1343f28cc57c251f8ccfd", # npub1plnzjvf3vkqle8hqwuay3rn787p0skq3q6sng0ege3tuy50cen7swku772
